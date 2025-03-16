@@ -25,11 +25,11 @@
             }
             
             body {
-                font-family: 'Noto Sans TC', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                color: #333;
-                padding-top: 60px;
-                font-size: 16px;
-                line-height: 1.6;
+                 font-family: 'Noto Sans TC', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                 color: #333;
+                 padding-top: 60px;
+                 font-size: 16px;
+                  line-height: 1.6;
             }
             
             /* Responsive font sizes */
@@ -255,7 +255,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#contact">
+                                <a class="nav-link" href="#contact-info">
                                     <span class="lang-en">Contact</span>
                                     <span class="lang-zh">聯絡我們</span>
                                 </a>
@@ -265,10 +265,6 @@
                             <a href="#" class="lang-switch active" data-lang="zh-HK">繁</a>
                             <a href="#" class="lang-switch" data-lang="en-GB">EN</a>
                         </div>
-                        <a href="#booking" class="btn btn-primary btn-sm">
-                            <span class="lang-en">Book Now</span>
-                            <span class="lang-zh">立即預約</span>
-                        </a>
                     </div>
                 </div>
             </nav>
@@ -288,9 +284,9 @@
                                     <span class="lang-en">Our Services</span>
                                     <span class="lang-zh">我們的服務</span>
                                 </a>
-                                <a href="#booking" class="btn btn-secondary">
-                                    <span class="lang-en">Book a Minibus</span>
-                                    <span class="lang-zh">預約小巴</span>
+                                <a href="#contact-info" class="btn btn-secondary">
+                                    <span class="lang-en">Contact Us</span>
+                                    <span class="lang-zh">聯絡我們</span>
                                 </a>
                             </div>
                         </div>
@@ -362,6 +358,7 @@
                             <div class="card h-100">
                                 <div class="card-body text-center p-4">
                                     <div class="service-icon">
+                                        <i class="
                                         <i class="fas fa-plane"></i>
                                     </div>
                                     <h5 class="card-title lang-en">Airport Transfers</h5>
@@ -388,196 +385,84 @@
                 </div>
             </section>
 
-            <!-- Contact Form Section -->
-            <section id="contact" class="section-padding">
+            <!-- Contact Info Section (replacing the Contact Form) -->
+            <section id="contact-info" class="section-padding">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 text-center mb-5">
                             <h2 class="mb-4">
                                 <span class="lang-en">Contact Us</span>
                                 <span class="lang-zh">聯絡我們</span>
                             </h2>
-                            <p class="mb-4 lang-en">Have questions or need more information? Fill out the form below and we'll get back to you as soon as possible.</p>
-                            <p class="mb-4 lang-zh">有問題或需要更多資訊？請填寫以下表格，我們會盡快回覆您。</p>
-                            
-                            <form id="contactForm" action="/submit-form" method="POST">
-                                <input type="hidden" name="formType" value="contact">
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">
-                                        <span class="lang-en">Name</span>
-                                        <span class="lang-zh">姓名</span>
-                                    </label>
-                                    <input type="text" class="form-control" id="name" name="name" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">
-                                        <span class="lang-en">Email</span>
-                                        <span class="lang-zh">電郵</span>
-                                    </label>
-                                    <input type="email" class="form-control" id="email" name="email" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="phone" class="form-label">
-                                        <span class="lang-en">Phone</span>
-                                        <span class="lang-zh">電話</span>
-                                    </label>
-                                    <input type="tel" class="form-control" id="phone" name="phone" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="message" class="form-label">
-                                        <span class="lang-en">Message</span>
-                                        <span class="lang-zh">訊息</span>
-                                    </label>
-                                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary w-100">
-                                    <span class="lang-en">Send Message</span>
-                                    <span class="lang-zh">發送訊息</span>
-                                </button>
-                            </form>
+                            <p class="lead lang-en">Have questions or need more information? Reach out to us directly.</p>
+                            <p class="lead lang-zh">有問題或需要更多資訊？請直接與我們聯繫。</p>
                         </div>
-                        <div class="col-lg-5 offset-lg-1">
-                            <div class="contact-info p-4 bg-light rounded shadow-sm">
-                                <h3 class="mb-4">
-                                    <span class="lang-en">Get In Touch</span>
-                                    <span class="lang-zh">聯繫方式</span>
-                                </h3>
-                                <div class="mb-3">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span class="lang-en">123 Transport Street, Kowloon, Hong Kong</span>
-                                    <span class="lang-zh">香港九龍運輸街123號</span>
-                                </div>
-                                <div class="mb-3">
-                                    <i class="fas fa-phone"></i>
-                                    <span>+852 1234 5678</span>
-                                </div>
-                                <div class="mb-3">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>info@jityeemotors.com</span>
-                                </div>
-                                <div class="mb-3">
-                                    <i class="fas fa-clock"></i>
-                                    <span class="lang-en">Mon-Sat: 8:00 AM - 8:00 PM</span>
-                                    <span class="lang-zh">週一至週六: 上午8時 - 晚上8時</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Booking Form Section -->
-            <section id="booking" class="section-padding bg-light">
-                <div class="container">
-                    <div class="text-center mb-5">
-                        <h2 class="mb-3">
-                            <span class="lang-en">Book a Minibus</span>
-                            <span class="lang-zh">預約小巴</span>
-                        </h2>
-                        <p class="lead lang-en">Fill out the form below to request a booking</p>
-                        <p class="lead lang-zh">填寫以下表格申請預約</p>
                     </div>
                     
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
-                            <div class="card shadow-sm">
-                                <div class="card-body p-4">
-                                    <form id="bookingForm" action="/submit-form" method="POST">
-                                        <input type="hidden" name="formType" value="booking">
-                                        <div class="row">
-                                            <div class="col-md-6 mb-3">
-                                                <label for="bookingName" class="form-label">
-                                                    <span class="lang-en">Full Name</span>
-                                                    <span class="lang-zh">全名</span>
-                                                </label>
-                                                <input type="text" class="form-control" id="bookingName" name="bookingName" required>
-                                            </div>
-                                            <div class="col-md-6 mb-3">
-                                                <label for="bookingPhone" class="form-label">
-                                                    <span class="lang-en">Phone Number</span>
-                                                    <span class="lang-zh">電話號碼</span>
-                                                </label>
-                                                <input type="tel" class="form-control" id="bookingPhone" name="bookingPhone" required>
+                            <div class="contact-info p-4 bg-light rounded shadow-sm">
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="d-flex align-items-start mb-3">
+                                            <i class="fas fa-map-marker-alt mt-1"></i>
+                                            <div class="ms-3">
+                                                <h5 class="lang-en">Address</h5>
+                                                <h5 class="lang-zh">地址</h5>
+                                                <p class="lang-en">123 Transport Street, Kowloon, Hong Kong</p>
+                                                <p class="lang-zh">香港九龍運輸街123號</p>
                                             </div>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="bookingEmail" class="form-label">
-                                                <span class="lang-en">Email Address</span>
-                                                <span class="lang-zh">電郵地址</span>
-                                            </label>
-                                            <input type="email" class="form-control" id="bookingEmail" name="bookingEmail" required>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 mb-3">
-                                                <label for="bookingDate" class="form-label">
-                                                    <span class="lang-en">Date</span>
-                                                    <span class="lang-zh">日期</span>
-                                                </label>
-                                                <input type="date" class="form-control" id="bookingDate" name="bookingDate" required>
-                                            </div>
-                                            <div class="col-md-6 mb-3">
-                                                <label for="bookingTime" class="form-label">
-                                                    <span class="lang-en">Time</span>
-                                                    <span class="lang-zh">時間</span>
-                                                </label>
-                                                <input type="time" class="form-control" id="bookingTime" name="bookingTime" required>
+                                        
+                                        <div class="d-flex align-items-start mb-3">
+                                            <i class="fas fa-phone mt-1"></i>
+                                            <div class="ms-3">
+                                                <h5 class="lang-en">Phone</h5>
+                                                <h5 class="lang-zh">電話</h5>
+                                                <p><a href="tel:+85212345678" class="text-dark">+852 1234 5678</a></p>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6 mb-3">
-                                                <label for="pickupLocation" class="form-label">
-                                                    <span class="lang-en">Pickup Location</span>
-                                                    <span class="lang-zh">接送地點</span>
-                                                </label>
-                                                <input type="text" class="form-control" id="pickupLocation" name="pickupLocation" required>
-                                            </div>
-                                            <div class="col-md-6 mb-3">
-                                                <label for="destination" class="form-label">
-                                                    <span class="lang-en">Destination</span>
-                                                    <span class="lang-zh">目的地</span>
-                                                </label>
-                                                <input type="text" class="form-control" id="destination" name="destination" required>
+                                    </div>
+                                    
+                                    <div class="col-md-6 mb-4">
+                                        <div class="d-flex align-items-start mb-3">
+                                            <i class="fas fa-envelope mt-1"></i>
+                                            <div class="ms-3">
+                                                <h5 class="lang-en">Email</h5>
+                                                <h5 class="lang-zh">電郵</h5>
+                                                <p><a href="mailto:info@jityeemotors.com" class="text-dark">info@jityeemotors.com</a></p>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6 mb-3">
-                                                <label for="passengers" class="form-label">
-                                                    <span class="lang-en">Number of Passengers</span>
-                                                    <span class="lang-zh">乘客人數</span>
-                                                </label>
-                                                <select class="form-select" id="passengers" name="passengers" required>
-                                                    <option value="">Select</option>
-                                                    <option value="1-5">1-5</option>
-                                                    <option value="6-10">6-10</option>
-                                                    <option value="11-16">11-16</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6 mb-3">
-                                                <label for="serviceType" class="form-label">
-                                                    <span class="lang-en">Service Type</span>
-                                                    <span class="lang-zh">服務類型</span>
-                                                </label>
-                                                <select class="form-select" id="serviceType" name="serviceType" required>
-                                                    <option value="">Select</option>
-                                                    <option value="airport">Airport Transfer</option>
-                                                    <option value="corporate">Corporate Transport</option>
-                                                    <option value="tour">Tour Service</option>
-                                                    <option value="other">Other</option>
-                                                </select>
+                                        
+                                        <div class="d-flex align-items-start mb-3">
+                                            <i class="fas fa-clock mt-1"></i>
+                                            <div class="ms-3">
+                                                <h5 class="lang-en">Business Hours</h5>
+                                                <h5 class="lang-zh">營業時間</h5>
+                                                <p class="lang-en">Mon-Sat: 8:00 AM - 8:00 PM</p>
+                                                <p class="lang-zh">週一至週六: 上午8時 - 晚上8時</p>
                                             </div>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="specialRequests" class="form-label">
-                                                <span class="lang-en">Special Requests</span>
-                                                <span class="lang-zh">特別要求</span>
-                                            </label>
-                                            <textarea class="form-control" id="specialRequests" name="specialRequests" rows="3"></textarea>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary w-100">
-                                            <span class="lang-en">Submit Booking Request</span>
-                                            <span class="lang-zh">提交預約申請</span>
-                                        </button>
-                                    </form>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center mt-3">
+                                    <h5 class="mb-3">
+                                        <span class="lang-en">Connect With Us</span>
+                                        <span class="lang-zh">與我們聯繫</span>
+                                    </h5>
+                                    <div class="social-icons-large">
+                                        <a href="https://wa.me/85212345678" class="btn btn-outline-success me-2">
+                                            <i class="fab fa-whatsapp me-2"></i>
+                                            <span class="lang-en">WhatsApp</span>
+                                            <span class="lang-zh">WhatsApp</span>
+                                        </a>
+                                        <a href="tel:+85212345678" class="btn btn-outline-primary">
+                                            <i class="fas fa-phone me-2"></i>
+                                            <span class="lang-en">Call Us</span>
+                                            <span class="lang-zh">致電我們</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -615,11 +500,7 @@
                                 <span class="lang-en">Our Services</span>
                                 <span class="lang-zh">我們的服務</span>
                             </a>
-                            <a href="#booking">
-                                <span class="lang-en">Book a Minibus</span>
-                                <span class="lang-zh">預約小巴</span>
-                            </a>
-                            <a href="#contact">
+                            <a href="#contact-info">
                                 <span class="lang-en">Contact Us</span>
                                 <span class="lang-zh">聯絡我們</span>
                             </a>
@@ -630,7 +511,6 @@
                         <h5 class="mb-3 lang-zh">聯絡資訊</h5>
                         <div class="footer-links">
                             <a href="#">
-                                <i class="fas fa-map
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span class="lang-en">123 Transport Street, Kowloon, Hong Kong</span>
                                 <span class="lang-zh">香港九龍運輸街123號</span>
@@ -657,58 +537,12 @@
             </div>
         </footer>
 
-        <!-- Thank You Pages (Hidden) -->
-        <div id="thank-you-contact" class="modal fade" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">
-                            <span class="lang-en">Thank You for Your Message</span>
-                            <span class="lang-zh">感謝您的訊息</span>
-                        </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p class="lang-en">We have received your message and will get back to you shortly.</p>
-                        <p class="lang-zh">我們已收到您的訊息，將盡快回覆您。</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
-                            <span class="lang-en">Close</span>
-                            <span class="lang-zh">關閉</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="thank-you-booking" class="modal fade" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">
-                            <span class="lang-en">Booking Request Received</span>
-                            <span class="lang-zh">已收到預約申請</span>
-                        </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p class="lang-en">Thank you for your booking request. We will confirm your booking as soon as possible.</p>
-                        <p class="lang-zh">感謝您的預約申請。我們將盡快確認您的預約。</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
-                            <span class="lang-en">Close</span>
-                            <span class="lang-zh">關閉</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Bootstrap JavaScript Libraries -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+        
+        <!-- Font Awesome for icons -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
         
         <!-- Language Switching Script -->
         <script>
@@ -736,29 +570,6 @@
                         });
                     });
                 });
-                
-                // Form submission handling
-                document.getElementById('contactForm').addEventListener('submit', function(e) {
-                    // Form will be handled by Cloudflare Worker
-                    // This is just for local testing or additional functionality
-                    console.log('Contact form submitted');
-                });
-                
-                document.getElementById('bookingForm').addEventListener('submit', function(e) {
-                    // Form will be handled by Cloudflare Worker
-                    // This is just for local testing or additional functionality
-                    console.log('Booking form submitted');
-                });
-                
-                // Check if we're returning from a form submission
-                const urlParams = new URLSearchParams(window.location.search);
-                if (urlParams.get('formSubmitted') === 'contact') {
-                    const thankYouModal = new bootstrap.Modal(document.getElementById('thank-you-contact'));
-                    thankYouModal.show();
-                } else if (urlParams.get('formSubmitted') === 'booking') {
-                    const thankYouModal = new bootstrap.Modal(document.getElementById('thank-you-booking'));
-                    thankYouModal.show();
-                }
             });
         </script>
     </body>
