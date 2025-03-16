@@ -60,14 +60,45 @@
             }
             
             .hero-section {
-                background: linear-gradient(rgba(51, 103, 95, 0.85), rgba(51, 103, 95, 0.85)), 
-                            url('https://images.unsplash.com/photo-1570125909232-eb263c188f7e?ixlib=rb-4.0.3');
-                background-size: cover;
-                background-position: center;
+                position: relative;
                 color: white;
                 padding: 80px 0;
                 margin-bottom: 40px;
+                overflow: hidden;
             }
+
+            .hero-slide {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-position: center;
+                opacity: 0;
+                transition: opacity 1s ease-in-out;
+                z-index: -1;
+            }
+
+            .hero-slide.active {
+                opacity: 1;
+            }
+
+            .hero-content {
+                position: relative;
+                z-index: 2;
+            }
+
+            .hero-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(51, 103, 95, 0.85);
+                z-index: 1;
+            }
+
             
             @media (max-width: 768px) {
                 .hero-section {
@@ -273,7 +304,19 @@
         <main>
             <!-- Hero Section -->
             <section id="home" class="hero-section d-flex align-items-center">
-                <div class="container">
+                <!-- Slides container -->
+                <div class="hero-slides">
+                    <div class="hero-slide active" style="background-image: url('https://scontent.fhkg1-1.fna.fbcdn.net/v/t39.30808-6/480799473_122143699748500002_5157349108646299720_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=4az8H_VXzEMQ7kNvgHDXSTI&_nc_oc=AdgKcoz3gSdFU5WfO48v1o4i7vqAUQ5Brla2aqAUjnd6w8XTc-ZDh-Z98IH_VNUiMYk&_nc_zt=23&_nc_ht=scontent.fhkg1-1.fna&_nc_gid=Ukz2125Guygjq1v7cBxGgQ&oh=00_AYHjMzG8j1JI3alnrbDjIGef1d_lv5nRKz9nNI_txL5-cQ&oe=67DCBEE7');"></div>
+                    <div class="hero-slide" style="background-image: url('https://scontent.fhkg1-2.fna.fbcdn.net/v/t39.30808-6/482071709_122146276226500002_2484462330945616820_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=xrrZqGTRnHgQ7kNvgHfUEES&_nc_oc=Adi-bJ9qF806l6pxQSwuyXEnEPGD0OWf_3klzHIlkUva-dinULRTPO3ESYA51lPPlyM&_nc_zt=23&_nc_ht=scontent.fhkg1-2.fna&_nc_gid=jhLDWBYxt7AEy56M9dR46Q&oh=00_AYFPsgSIm1dpYjltOXN5isayMM92BOfIcch-J8QI_j4Pww&oe=67DCAEB8');"></div>
+                    <div class="hero-slide" style="background-image: url('https://scontent.fhkg1-1.fna.fbcdn.net/v/t39.30808-6/475776677_122139975854500002_8273048928391157766_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=XYG2eU2VNFoQ7kNvgGeKjc2&_nc_oc=AdiIdV8IZQMmNEMCGgqX_6-3f5QF4Xl1nXWCjTAfgDpRZzzthDqdWc0_ofvJH7n1Fbk&_nc_zt=23&_nc_ht=scontent.fhkg1-1.fna&_nc_gid=PLjT45gc3qOUTto_WUDONQ&oh=00_AYGuu4UHSpSZLSpz3QHa1SVCeL3UnMVDFU5j3398_2etiw&oe=67DCAFFA');"></div>
+                    <!-- Add more slides as needed -->
+                </div>
+                
+                <!-- Overlay -->
+                <div class="hero-overlay"></div>
+                
+                <!-- Content -->
+                <div class="container hero-content">
                     <div class="row">
                         <div class="col-lg-7">
                             <h1 class="fw-bold mb-4">捷易車行 | Jit Yee Motors</h1>
@@ -293,6 +336,7 @@
                     </div>
                 </div>
             </section>
+            
 
             <!-- About Section -->
             <section id="about" class="section-padding">
@@ -543,7 +587,7 @@
         <!-- Font Awesome for icons -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
         
-        <!-- Language Switching Script -->
+        <!-- Language Switching and Slideshow Script -->
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 // Set default language or get from localStorage
@@ -569,6 +613,26 @@
                         });
                     });
                 });
+                
+                // Hero slideshow functionality
+                function setupHeroSlideshow() {
+                    const slides = document.querySelectorAll('.hero-slide');
+                    if (slides.length <= 1) return;
+                    
+                    let currentSlide = 0;
+                    
+                    function showNextSlide() {
+                        slides[currentSlide].classList.remove('active');
+                        currentSlide = (currentSlide + 1) % slides.length;
+                        slides[currentSlide].classList.add('active');
+                    }
+                    
+                    // Change slide every 5 seconds
+                    setInterval(showNextSlide, 2000);
+                }
+                
+                // Initialize the slideshow
+                setupHeroSlideshow();
             });
         </script>
     </body>
