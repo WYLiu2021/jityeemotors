@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="zh-HK">
+    <head>
+        <title>捷易車行 | Jit Yee Motors Ltd.</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.25, maximum-scale=1.0, user-scalable=no" />
+        
+        <!-- Bootstrap CSS v5.3.2 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+        
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        
+        <!-- Google Fonts - Noto Sans TC for Chinese characters -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+        
+        <style>
+            :root {
+                --primary-color: rgb(51, 103, 95);      /* Hong Kong minibus green */
+                --secondary-color: rgb(215, 197, 154);  /* Hong Kong minibus cream/beige */
+                --primary-dark: rgb(41, 83, 76);
+                --secondary-dark: rgb(195, 177, 134);
+                --text-on-primary: white;
+                --text-on-secondary: #333;
+            }
+            
+            body {
+                font-family: 'Noto Sans TC', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: #333;
+                padding-top: 60px;
+            }
+            
+            .navbar {
+                background-color: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            
+            .hero-section {
+                background: linear-gradient(rgba(51, 103, 95, 0.85), rgba(51, 103, 95, 0.85)), 
+                            url('https://images.unsplash.com/photo-1570125909232-eb263c188f7e?ixlib=rb-4.0.3');
+                background-size: cover;
+                background-position: center;
+                color: white;
+                padding: 120px 0;
+                margin-bottom: 60px;
+            }
+            
+            .section-padding {
+                padding: 80px 0;
+            }
+            
+            .btn-primary {
+                background-color: var(--primary-color);
+                border-color: var(--primary-color);
+            }
+            
+            .btn-primary:hover {
+                background-color: var(--primary-dark);
+                border-color: var(--primary-dark);
+            }
+            
+            .btn-secondary {
+                background-color: var(--secondary-color);
+                border-color: var(--secondary-color);
+                color: var(--text-on-secondary);
+            }
+            
+            .btn-secondary:hover {
+                background-color: var(--secondary-dark);
+                border-color: var(--secondary-dark);
+                color: var(--text-on-secondary);
+            }
+            
+            footer {
+                background-color: var(--primary-color);
+                color: white;
+                padding: 60px 0 30px;
+            }
+            
+            .minibus-stripe {
+                height: 10px;
+                background-color: var(--primary-color);
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1100;
+            }
+            
+            .language-toggle a {
+                padding: 5px 8px;
+                text-decoration: none;
+                color: #333;
+                font-size: 14px;
+                border-radius: 4px;
+                margin: 0 2px;
+            }
+            
+            .language-toggle a.active {
+                background-color: var(--primary-color);
+                color: white;
+            }
+            
+            /* Hide elements based on language */
+            html[lang="en-GB"] .lang-zh,
+            html[lang="zh-HK"] .lang-en {
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Minibus stripe at the top -->
+        <div class="minibus-stripe"></div>
+        
+        <header>
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="top: 10px;">
+                <div class="container">
+                    <a class="navbar-brand fw-bold" href="#">
+                        <span>捷易車行 | Jit Yee Motors</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#home">
+                                    <span class="lang-en">Home</span>
+                                    <span class="lang-zh">首頁</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about">
+                                    <span class="lang-en">About</span>
+                                    <span class="lang-zh">關於我們</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#services">
+                                    <span class="lang-en">Services</span>
+                                    <span class="lang-zh">服務</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">
+                                    <span class="lang-en">Contact</span>
+                                    <span class="lang-zh">聯絡我們</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="language-toggle ms-2 me-3">
+                            <a href="#" class="lang-switch active" data-lang="zh-HK">繁</a>
+                            <a href="#" class="lang-switch" data-lang="en-GB">EN</a>
+                        </div>
+                        <a href="#booking" class="btn btn-primary btn-sm">
+                            <span class="lang-en">Book Now</span>
+                            <span class="lang-zh">立即預約</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section id="home" class="hero-section d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <h1 class="display-4 fw-bold mb-4">捷易車行 | Jit Yee Motors</h1>
+                            <p class="lead mb-4 lang-en">Professional and reliable minibus services for all your transportation needs.</p>
+                            <p class="lead mb-4 lang-zh">專業可靠的小巴服務，滿足您所有的交通需求。</p>
+                            <div class="d-flex gap-3">
+                                <a href="#services" class="btn btn-primary">
+                                    <span class="lang-en">Our Services</span>
+                                    <span class="lang-zh">我們的服務</span>
+                                </a>
+                                <a href="#booking" class="btn btn-secondary">
+                                    <span class="lang-en">Book a Minibus</span>
+                                    <span class="lang-zh">預約小巴</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3" alt="About Jit Yee Motors" class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-md-6 d-flex flex-column justify-content-center">
+                            <h2 class="mb-4">
+                                <span class="lang-en">Your Trusted Minibus Service Provider</span>
+                                <span class="lang-zh">您值得信賴的小巴服務提供商</span>
+                            </h2>
+                            <p class="mb-4 lang-en">Established with a commitment to excellence, Jit Yee Motors Ltd. has been providing reliable transportation services for over 15 years.</p>
+                            <p class="mb-4 lang-zh">捷易車行致力於卓越服務，15年來一直提供可靠的交通運輸服務。</p>
+                            <div class="row mt-4">
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-check-circle me-2" style="color: var(--primary-color);"></i>
+                                        <p class="mb-0 lang-en">Licensed Professional Drivers</p>
+                                        <p class="mb-0 lang-zh">持牌專業司機</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-check-circle me-2" style="color: var(--primary-color);"></i>
+                                        <p class="mb-0 lang-en">Well-Maintained Vehicles</p>
+                                        <p class="mb-0 lang-zh">保養良好的車輛</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="section-padding bg-light">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="mb-3">
+                            <span class="lang-en">Our Services</span>
+                            <span class="lang-zh">我們的服務</span>
+                        </h2>
+                        <p class="lead lang-en">We offer a range of professional minibus services</p>
+                        <p class="lead lang-zh">我們提供一系列專業小巴服務</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body text-center p-4">
+                                    <div class="service-icon">
+                                        <i class="fas fa-building"></i>
+                                    </div>
+                                    <h5 class="card-title lang-en">Corporate Transport</h5>
+                                    <h5 class="card-title lang-zh">企業接送服務</h5>
+                                    <p class="card-text lang-en">Reliable transportation for your employees and clients.</p>
+                                    <p class="card-text lang-zh">為您的員工和客戶提供可靠的交通服務。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body text-center p-4">
+                                    <div class="service-icon">
+                                        <i class="fas fa-plane"></i>
+                                    </div>
+                                    <h5 class="card-title lang-en">Airport Transfers</h5>
+                                    <h5 class="card-title lang-zh">機場接送</h5>
+                                    <p class="card-text lang-en">Punctual and comfortable airport pickup and drop-off.</p>
+                                    <p class="card-text lang-zh">準時舒適的機場接送服務。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body text-center p-4">
+                                    <div class="service-icon">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                    </div>
+                                    <h5 class="card-title lang-en">Tour Services</h5>
+                                    <h5 class="card-title lang-zh">旅遊服務</h5>
+                                    <p class="card-text lang-en">Explore Hong Kong with our experienced drivers.</p>
+                                    <p class="card-text lang-zh">與我們經驗豐富的司機一起探索香港。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 mb-4 mb-lg-0">
+                            <h2 class="mb-4">
+                                <span class="lang-en">Contact Us</span>
+                                <span class="lang-zh">聯絡我們</span>
+                            </h2>
+                            <p class="mb-4 lang-en">Have questions or ready to book? Get in touch with us.</p>
+                            <p class="mb-4 lang-zh">有問題或準備預訂？請與我們聯繫。</p>
+                            <div class="contact-info mb-4">
+                                <p><i class="fas fa-map-marker-alt"></i> 
+                                    <span class="lang-en">123 Transport Street, Mong Kok, Kowloon, Hong Kong</span>
+                                    <span class="lang-zh">香港九龍旺角運輸街123號</span>
+                                </p>
+                                <p><i class="fas fa-phone"></i> +852 2345 6789</p>
+                                <p><i class="fas fa-envelope"></i> info@jityeemotors.com.hk</p>
+                            </div>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card shadow-sm">
+                                <div class="card-body p-4">
+                                    <h3 class="mb-4">
+                                        <span class="lang-en">Send us a message</span>
+                                        <span class="lang-zh">發送訊息</span>
+                                    </h3>
+                                    <form id="contactForm">
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">
+                                                <span class="lang-en">Name</span>
+                                                <span class="lang-zh">姓名</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="name" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">
+                                                <span class="lang-en">Email</span>
+                                                <span class="lang-zh">電郵</span>
+                                            </label>
+                                            <input type="email" class="form-control" id="email" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="phone" class="form-label">
+                                                <span class="lang-en">Phone</span>
+                                                <span class="lang-zh">電話</span>
+                                            </label>
+                                            <input type="tel" class="form-control" id="phone" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="message" class="form-label">
+                                                <span class="lang-en">Message</span>
+                                                <span class="lang-zh">訊息</span>
+                                            </label>
+                                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100">
+                                            <span class="lang-en">Send Message</span>
+                                            <span class="lang-zh">發送訊息</span>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Booking Section -->
+            <section id="booking" class="section-padding bg-light">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="mb-3">
+                            <span class="lang-en">Book a Minibus</span>
+                            <span class="lang-zh">預約小巴</span>
+                        </h2>
+                        <p class="lead lang-en">Fill out the form below to request a booking</p>
+                        <p class="lead lang-zh">填寫以下表格申請預約</p>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="card shadow-sm">
+                                <div class="card-body p-4">
+                                    <form id="bookingForm">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="bookingName" class="form-label">
+                                                    <span class="lang-en">Full Name</span>
+                                                    <span class="lang-zh">全名</span>
+                                                </label>
+                                                <input type="text" class="form-control" id="bookingName" required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="bookingPhone" class="form-label">
+                                                    <span class="lang-en">Phone Number</span>
+                                                    <span class="lang-zh">電話號碼</span>
+                                                </label>
+                                                <input type="tel" class="form-control" id="bookingPhone" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="bookingEmail" class="form-label">
+                                                <span class="lang-en">Email Address</span>
+                                                <span class="lang-zh">電郵地址</span>
+                                            </label>
+                                            <input type="email" class="form-control" id="bookingEmail" required>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="bookingDate" class="form-label">
+                                                    <span class="lang-en">Date</span>
+                                                    <span class="lang-zh">日期</span>
+                                                </label>
+                                                <input type="date" class="form-control" id="bookingDate" required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="bookingTime" class="form-label">
+                                                    <span class="lang-en">Time</span>
+                                                    <span class="lang-zh">時間</span>
+                                                </label>
+                                                <input type="time" class="form-control" id="bookingTime" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="pickupLocation" class="form-label">
+                                                    <span class="lang-en">Pickup Location</span>
+                                                    <span class="lang-zh">接送地點</span>
+                                                </label>
+                                                <input type="text" class="form-control" id="pickupLocation" required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="destination" class="form-label">
+                                                    <span class="lang-en">Destination</span>
+                                                    <span class="lang-zh">目的地</span>
+                                                </label>
+                                                <input type="text" class="form-control" id="destination" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="passengers" class="form-label">
+                                                    <span class="lang-en">Number of Passengers</span>
+                                                    <span class="lang-zh">乘客人數</span>
+                                                </label>
+                                                <select class="form-select" id="passengers" required>
+                                                    <option value="">
+                                                        <span class="lang-en">Select</span>
+                                                        <span class="lang-zh">選擇</span>
+                                                    </option>
+                                                    <option value="1-5">1-5</option>
+                                                    <option value="6-10">6-10</option>
+                                                    <option value="11-16">11-16</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="serviceType" class="form-label">
+                                                    <span class="lang-en">Service Type</span>
+                                                    <span class="lang-zh">服務類型</span>
+                                                </label>
+                                                <select class="form-select" id="serviceType" required>
+                                                    <option value="">
+                                                        <span class="lang-en">Select</span>
+                                                        <span class="lang-zh">選擇</span>
+                                                    </option>
+                                                    <option value="airport">
+                                                        <span class="lang-en">Airport Transfer</span>
+                                                        <span class="lang-zh">機場接送</span>
+                                                    </option>
+                                                    <option value="corporate">
+                                                        <span class="lang-en">Corporate Transport</span>
+                                                        <span class="lang-zh">企業接送</span>
+                                                    </option>
+                                                    <option value="tour">
+                                                        <span class="lang-en">Tour Service</span>
+                                                        <span class="lang-zh">旅遊服務</span>
+                                                    </option>
+                                                    <option value="other">
+                                                        <span class="lang-en">Other</span>
+                                                        <span class="lang-zh">其他</span>
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="specialRequests" class="form-label">
+                                                <span class="lang-en">Special Requests</span>
+                                                <span class="lang-zh">特別要求</span>
+                                            </label>
+                                            <textarea class="form-control" id="specialRequests" rows="3"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100">
+                                            <span class="lang-en">Submit Booking Request</span>
+                                            <span class="lang-zh">提交預約申請</span>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <h5 class="mb-4">捷易車行 | Jit Yee Motors</h5>
+                        <p class="lang-en">Professional minibus services for all your transportation needs in Hong Kong.</p>
+                        <p class="lang-zh">為您在香港提供各種專業小巴服務。</p>
+                        <div class="social-icons mt-3">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <h5 class="mb-4">
+                            <span class="lang-en">Quick Links</span>
+                            <span class="lang-zh">快速連結</span>
+                        </h5>
+                        <div class="footer-links">
+                            <a href="#home">
+                                <span class="lang-en">Home</span>
+                                <span class="lang-zh">首頁</span>
+                            </a>
+                            <a href="#about">
+                                <span class="lang-en">About Us</span>
+                                <span class="lang-zh">關於我們</span>
+                            </a>
+                            <a href="#services">
+                                <span class="lang-en">Services</span>
+                                <span class="lang-zh">服務</span>
+                            </a>
+                            <a href="#booking">
+                                <span class="lang-en">Book a Minibus</span>
+                                <span class="lang-zh">預約小巴</span>
+                            </a>
+                            <a href="#contact">
+                                <span class="lang-en">Contact</span>
+                                <span class="lang-zh">聯絡我們</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="mb-4">
+                            <span class="lang-en">Contact Information</span>
+                            <span class="lang-zh">聯絡資料</span>
+                        </h5>
+                        <div class="contact-info">
+                            <p><i class="fas fa-map-marker-alt"></i> 
+                                <span class="lang-en">123 Transport Street, Mong Kok, Kowloon, Hong Kong</span>
+                                <span class="lang-zh">香港九龍旺角運輸街123號</span>
+                            </p>
+                            <p><i class="fas fa-phone"></i> +852 2345 6789</p>
+                            <p><i class="fas fa-envelope"></i> info@jityeemotors.com.hk</p>
+                            <p><i class="fas fa-clock"></i> 
+                                <span class="lang-en">Mon-Sat: 8:00 AM - 8:00 PM</span>
+                                <span class="lang-zh">週一至週六: 上午8:00 - 晚上8:00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0">
+                            <span class="lang-en">&copy; 2023 Jit Yee Motors Ltd. All rights reserved.</span>
+                            <span class="lang-zh">&copy; 2023 捷易車行有限公司。版權所有。</span>
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="mb-0">
+                            <span class="lang-en">Designed with <i class="fas fa-heart" style="color: var(--secondary-color);"></i> in Hong Kong</span>
+                            <span class="lang-zh">香港設計 <i class="fas fa-heart" style="color: var(--secondary-color);"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap JavaScript Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+        
+        <!-- Language Switcher Script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const langSwitchers = document.querySelectorAll('.lang-switch');
+                
+                langSwitchers.forEach(switcher => {
+                    switcher.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const lang = this.getAttribute('data-lang');
+                        document.documentElement.lang = lang;
+                        
+                        //
+                        // Update active state
+                        langSwitchers.forEach(el => el.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Save preference
+                        localStorage.setItem('preferredLanguage', lang);
+                    });
+                });
+                
+                // Check for saved language preference
+                const savedLang = localStorage.getItem('preferredLanguage');
+                if (savedLang) {
+                    document.documentElement.lang = savedLang;
+                    
+                    // Update active state
+                    langSwitchers.forEach(el => {
+                        if (el.getAttribute('data-lang') === savedLang) {
+                            el.classList.add('active');
+                        } else {
+                            el.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
